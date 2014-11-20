@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bitmap Text Plugin</title>
+	<script src="lib/kiwi.js"></script>
+	<script src="../src/bitmapText-1.0.2.js"></script>
+	<script src="lib/gl-matrix-min.js"></script>
+</head>
+<body>
+
+<script>
+
+	var myState = new Kiwi.State('myState');
+
+	myState.preload = function() {
+		//Load in the spritesheet that we will use for the bitmap text.
+		this.addSpriteSheet('adore64', 'assets/bitmapAtlas.png', 16, 30);
+	}
+
+	myState.create = function() {
+		//Create the gameobject for it.
+		this.bit = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'Hello From WebGL!', 0, 0 );
+		this.addChild( this.bit );
+		
+
+		this.bit2 = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'World saying hello back $#.. ,*-+22%', 200, 100 );
+		this.addChild(this.bit2);
+
+		//set max width
+		this.bit2.maxWidth = 150;
+
+		//Remap all the cells
+		var newCells = { '.': 63, '!': 62, '$':64, '#': 65, ' ': 66 };
+
+		this.bit.remap(newCells);
+		this.bit2.remap(newCells);
+	}
+
+
+	var game = new Kiwi.Game('','BitmapTest', myState, { plugins: ['BitmapText'], renderer: Kiwi.RENDERER_WEBGL })	
+
+</script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ loadingState.preload = function()
     this.addImage('outside1', 'outside1.png');
     this.addImage('outside2', 'outside2.png');
     this.addSpriteSheet('characterSprite', 'boywalking.png', 64, 64);
+    this.addSpriteSheet('textAtlas', 'textAtlas.png', 16, 30, true);
 }
 
 loadingState.update = function()

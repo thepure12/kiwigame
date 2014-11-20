@@ -6,6 +6,19 @@ outside0State.create = function()
     createCharacter(this);
     this.addChild(this.background);
     this.addChild(this.character);
+    //Adding text
+    this.text1 = new Kiwi.Plugins.GameObjects.BitmapText(this, this.textures['textAtlas'], 
+        "Hey look!    This is a    text box.", 66, 198);
+    this.addChild(this.text1);
+    this.text1.maxWidth = 210;
+    this.text1.alphabeticalCells['.'] = 63;
+    this.text1.alphabeticalCells['!'] = 62;
+    this.text1.alphabeticalCells['$'] = 64;
+    this.text1.alphabeticalCells['#'] = 65;
+    this.text1.alphabeticalCells[' '] = 66;
+    this.text1.scaleX = 0.8;
+    this.text1.scaleY = 0.8;
+    this.text1.alpha = 0;
 }
 
 outside0State.update = function()
@@ -58,6 +71,7 @@ outside0State.onPress = function(key)
                        (x > 384 && x < 414 && this.facing == 'left');
         if (interact)
         {
+            this.text1.alpha = 1;
             alert("Interacting");
         }
     }

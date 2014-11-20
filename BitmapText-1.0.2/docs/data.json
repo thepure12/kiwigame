@@ -1,0 +1,628 @@
+{
+    "project": {
+        "name": "BitmapText",
+        "description": "This is a GameObject that is used to handle rendering bitmap text onto a Canvas.",
+        "version": "1.0.2",
+        "url": "http://kiwijs.org/"
+    },
+    "files": {
+        "src\\bitmapText-1.0.2.js": {
+            "name": "src\\bitmapText-1.0.2.js",
+            "modules": {
+                "Plugins": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.BitmapText": 1,
+                "Kiwi.Plugins.GameObjects.BitmapText": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.GameObjects": 1
+            }
+        }
+    },
+    "modules": {
+        "Kiwi": {
+            "name": "Kiwi",
+            "submodules": {
+                "Plugins": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.BitmapText": 1,
+                "Kiwi.Plugins.GameObjects.BitmapText": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.GameObjects": 1
+            },
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 34
+        },
+        "Plugins": {
+            "name": "Plugins",
+            "submodules": {},
+            "classes": {
+                "Kiwi.Plugins.BitmapText": 1,
+                "Kiwi.Plugins.GameObjects.BitmapText": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.GameObjects": 1
+            },
+            "module": "Kiwi",
+            "namespace": "",
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 34,
+            "description": "A Object that outlines the information related to this BitmapText Plugin. Aka the name and version of it."
+        }
+    },
+    "classes": {
+        "Kiwi.Plugins.BitmapText": {
+            "name": "Kiwi.Plugins.BitmapText",
+            "shortname": "Kiwi.Plugins.BitmapText",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins",
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 1,
+            "description": "A Object that outlines the information related to this BitmapText Plugin. Aka the name and version of it."
+        },
+        "Kiwi.Plugins.GameObjects.BitmapText": {
+            "name": "Kiwi.Plugins.GameObjects.BitmapText",
+            "shortname": "Kiwi.Plugins.GameObjects.BitmapText",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects",
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 34,
+            "description": "A Kiwi Plugin GameObject that is useful for display bitmap text in a Kiwi Game.\nWorks in a very similar fashion to the default 'TextField' GameObject included in the core of Kiwi except this one requires a Texture Atlas passed   \nAnd you can also set the maximum width of the Text to make them span multiple lines.",
+            "extends": "Entity",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "state",
+                    "description": "The State that this gameobject belongs to.",
+                    "type": "State"
+                },
+                {
+                    "name": "atlas",
+                    "description": "The spritesheet or textureatlas that holds the font.",
+                    "type": "TextureAtlas|SpriteSheet"
+                },
+                {
+                    "name": "text",
+                    "description": "The text to display. Can be changed later.",
+                    "type": "String"
+                },
+                {
+                    "name": "x",
+                    "description": "The gameobjects coordinates on the x-axis.",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "The gameobjects coordinates on the y-axis.",
+                    "type": "Number"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 10,
+            "description": "The name of this plugin.",
+            "itemtype": "property",
+            "name": "name",
+            "default": "'BitmapText'",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 17,
+            "description": "The version of this plugin.",
+            "itemtype": "property",
+            "name": "version",
+            "default": "'1.0.2'",
+            "class": "Kiwi.Plugins.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 55,
+            "description": "The 'alphabeticalCells' is an object is used to reference which cell of the texture atlas should be used for aech string character.\nThis isn't a 'robust' object by far (doesn't contain every string character there can be) \nBut you can add those as you needs see fit.",
+            "itemtype": "property",
+            "name": "_alphabeticalCells",
+            "access": "private",
+            "tagname": "",
+            "type": "Array",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 105,
+            "description": "An array of Punctation characters that are used to 'seperate' words but stay on at the end of word they are 'attached' to.",
+            "itemtype": "property",
+            "name": "punctionationChars",
+            "type": "String[]",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 113,
+            "description": "The default cell that is to be used when a cell could not be found for a particular character.\nCurrently the default is the same as what a 'space' would be.",
+            "itemtype": "property",
+            "name": "defaultCell",
+            "default": "67",
+            "access": "public",
+            "tagname": "",
+            "type": "number",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 124,
+            "description": "The texture atlas that the bitmapText lies on.",
+            "itemtype": "property",
+            "name": "bitmapTextAtlas",
+            "type": "TextureAtlas",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 133,
+            "description": "The text that is to be rendered in the BitmapTextfield.",
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 142,
+            "description": "If the atlas used is 'supported' or not.",
+            "itemtype": "property",
+            "name": "supported",
+            "type": "Boolean",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 151,
+            "description": "If the gameobject is 'dirty' and needs 're-rendering' or not.",
+            "itemtype": "property",
+            "name": "_tempDirty",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 160,
+            "description": "The maximum width of the TextField. Set to 'null' if no maximum width is desired.\nAka. If the text is to be all on one line.",
+            "itemtype": "property",
+            "name": "maxWidth",
+            "type": "number",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 169,
+            "description": "The 'actual' width of the text. This is READ ONLY.",
+            "itemtype": "property",
+            "name": "_width",
+            "type": "number",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 177,
+            "description": "A INTERNAL plugin property, that is used when desiding which characters should go on which lines.",
+            "itemtype": "property",
+            "name": "_lines",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 195,
+            "description": "A INTERNAL plugin property, that is used to render the text onto intially. And then this canvas is rendered onto the main one.",
+            "itemtype": "property",
+            "name": "_tempCanvas",
+            "type": "HTMLCanvasElement",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 207,
+            "description": "A INTERNAL plugin property, the 2d context for the temporary canvas.",
+            "itemtype": "property",
+            "name": "_tempCtx",
+            "type": "HTMLCanvasContent",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 215,
+            "description": "A INTERNAL plugin property, holds the width (or what it should be) of the temporary canvas.",
+            "itemtype": "property",
+            "name": "_tempCanvasWidth",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 223,
+            "description": "A INTERNAL plugin property, holds the height (or what it should be) of the temporary canvas.",
+            "itemtype": "property",
+            "name": "_tempCanvasHeight",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 231,
+            "description": "A INTERNAL plugin property that holds the current 'word' who's individual character lines are being detiremined.",
+            "itemtype": "property",
+            "name": "_tempWord",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 239,
+            "description": "The texture atlas that will is created 'on the fly', by this game object. \nThe canvas on it is updated every frame.",
+            "itemtype": "property",
+            "name": "atlas",
+            "type": "SingleImage",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 256,
+            "description": "The 'alphabeticalCells' is an object is used to reference which cell of the texture atlas should be used for each string character.\nThis isn't a 'robust' object by far (doesn't contain every string character there can be) \nBut you can add those as you needs see fit.",
+            "itemtype": "property",
+            "name": "alphabeticalCells",
+            "access": "public",
+            "tagname": "",
+            "type": "Array",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 279,
+            "description": "Updates the string-cell references on the 'alphabeticalCells' property of this object based on an object that is passed.\nThe object passed doesn't have to contain every character-cell refernce, only those that are to be changed.",
+            "itemtype": "method",
+            "name": "remap",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 296,
+            "description": "A STATIC method used to update all the 'alphabeticalCells' of bitmaptext objects passed, with an object that is also passed. \nNote: This just calls the remap method on the gameobjects,",
+            "itemtype": "method",
+            "name": "remap",
+            "static": 1,
+            "params": [
+                {
+                    "name": "bitmapTextObjects",
+                    "description": "",
+                    "type": "BitmapText"
+                },
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 315,
+            "description": "The text that is to be rendered in the BitmapTextfield.",
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 336,
+            "description": "The actual width of the text. This property is READ ONLY, and does not directly affect anything.",
+            "itemtype": "property",
+            "name": "width",
+            "type": "Number",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 351,
+            "description": "The update loop for this bitmap text object.",
+            "itemtype": "method",
+            "name": "update",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 362,
+            "description": "An method that return's the CELL number that will be used for a character that is passed.",
+            "itemtype": "method",
+            "name": "cellNumber",
+            "params": [
+                {
+                    "name": "character",
+                    "description": "The character that you want to check to see which cell will be used.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The CELL number that will be used.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 383,
+            "description": "An INTERNAL method that is used figure out which cell is to be used for each character in the text.\nThis is method is only for Bitmap text objects that don't have a maximum width set, so the text won't be spanning multiple lines.\nShould NOT be called by the developer/external objects.",
+            "itemtype": "method",
+            "name": "_singleLineText",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 414,
+            "description": "An INTERNAL method that is used to figure out which cell is to be used for each character in the text. \nAlso figures out which lines the characters/words should go on and this method is used for BitmapText's with a maximum width set (as they could span multiple lines).\nShould NOT be called by the developer/external objects.",
+            "itemtype": "method",
+            "name": "_multiLineText",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 497,
+            "description": "A INTERNAL method which is used during the multiline text to start to add the '_tempWord' to the lines.",
+            "itemtype": "method",
+            "name": "_addTempWord",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 522,
+            "description": "A INTERNAL method that makes the word stored in '_tempWord' break when it is wrapped over multiple lines.",
+            "itemtype": "method",
+            "name": "_multiLineTextBreak",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 568,
+            "description": "An INTERNAL method that is called during the rendering process.\nIt is used to when the gameobject is 'dirty' and tells it to re-calculate which cell goes to which text and render the text to the _tempCanvas",
+            "itemtype": "method",
+            "name": "_renderText",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 607,
+            "description": "An INTERNAL method which handles the rendering of the lines/text to the temporary canvas.",
+            "itemtype": "method",
+            "name": "_renderToTempCanvas",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 666,
+            "description": "The render method that renders this gameobject for canvas.",
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "Camera"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        },
+        {
+            "file": "src\\bitmapText-1.0.2.js",
+            "line": 701,
+            "description": "The rendering method for webgl",
+            "itemtype": "method",
+            "name": "renderGL",
+            "params": [
+                {
+                    "name": "gl",
+                    "description": ""
+                },
+                {
+                    "name": "camera",
+                    "description": ""
+                },
+                {
+                    "name": "params",
+                    "description": ""
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.GameObjects.BitmapText",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.GameObjects"
+        }
+    ],
+    "warnings": []
+}

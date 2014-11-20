@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bitmap Text Plugin</title>
+	<script src="lib/kiwi.js"></script>
+	<script src="../src/bitmapText-1.0.2.js"></script>
+</head>
+<body>
+
+<script>
+
+	var myState = new Kiwi.State('myState');
+
+	myState.preload = function() {
+		//Load in the spritesheet that we will use for the bitmap text.
+		this.addTextureAtlas('Asul', 'assets/textureAtlas.png', 'AsulJSON', 'assets/asul.json');
+	}
+
+	myState.create = function() {
+		
+		//Custom text using a Texture Atlas
+		this.asul = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.Asul );
+		this.asul.text = 'Can you guess the fonts name?';
+		this.asul.maxWidth = 310;
+
+		this.asul.alphabeticalCells['^'] = 68;
+		this.asul.alphabeticalCells['?'] = 69;
+
+		this.addChild(this.asul);
+
+	}
+
+
+	var game = new Kiwi.Game('','BitmapTest', myState, { plugins: ['BitmapText'] })	
+
+</script>
+
+</body>
+</html>

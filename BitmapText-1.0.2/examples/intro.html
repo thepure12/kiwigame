@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bitmap Text Plugin</title>
+	<script src="lib/kiwi.js"></script>
+	<script src="../src/bitmapText-1.0.2.js"></script>
+</head>
+<body>
+
+<script>
+
+	var myState = new Kiwi.State('myState');
+
+	myState.preload = function() {
+		//Load in the spritesheet that we will use for the bitmap text.
+		this.addSpriteSheet('adore64', 'assets/bitmapAtlas.png', 16, 30);
+	}
+
+	myState.create = function() {
+		//Create the gameobject for it.
+		this.bit = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'Hello World....', 0, 0 );
+		this.addChild( this.bit );
+
+		//Set a max-width of the text to be. OPTIONAL!
+		this.bit.maxWidth = 100;
+		
+
+		this.bit2 = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'World saying hello back $#.. ,*-+22%', 200, 0 );
+		this.addChild(this.bit2);
+
+		//set max width
+		this.bit2.maxWidth = 150;
+
+
+
+		var longer = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'This piece of text is OMGTHISISSOLONGIDONTTHINKICANREADIT LONG! Be careful of it otherwise it may just look alright!', 0, 175);
+		longer.maxWidth = 400;
+		this.addChild(longer);
+
+
+		var single = new Kiwi.Plugins.GameObjects.BitmapText( this, this.textures.adore64, 'Here is a long piece of text.', 0, 400);
+
+		this.addChild(single);
+
+
+		var newCells = { '.': 63, '!': 62, '$':64, '#': 65, ' ': 66 };
+		Kiwi.Plugins.GameObjects.BitmapText.remap([single, longer, this.bit, this.bit2], newCells);
+
+	}
+
+
+	var game = new Kiwi.Game('','BitmapTest', myState, { plugins: ['BitmapText'] })	
+
+</script>
+
+</body>
+</html>

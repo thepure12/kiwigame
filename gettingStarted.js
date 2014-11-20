@@ -3,7 +3,7 @@ var gameOptions =
     renderer: Kiwi.RENDERER_WEBGL, 
     width: 640,
     height: 320,
-    plugins:['InventoryManager']
+    plugins:['InventoryManager']['BitmapText']
 }
 var myGame = new Kiwi.Game('content', 'myGame', null, gameOptions);
 var x = 3;
